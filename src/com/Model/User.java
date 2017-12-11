@@ -5,6 +5,7 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 
 import javax.servlet.http.Part;
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
@@ -37,14 +38,15 @@ public class User {
     }
 
     public int doRegister(){
-        int responseCode=100;
+        int responseCode=0;
         String sql = "INSERT INTO socialstorydb.`user`(PASSWORD,NAME,phonenum) VALUES ("+ this.user_Password +",\""+ this.user_name+ "\","+ this.user_Phone+")";
         String sql1 = "SELECT * FROM socialstorydb.`user` WHERE phonenum = \"" + this.user_Phone +"\"";
         DButils db = new DButils();
         try {
             responseCode = db.query(sql1);
-            if(responseCode == 0 )
-                return responseCode;
+            System.out.println("我是检测手机的注册后台"+responseCode);
+            if(responseCode == 1 )
+                return 0;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -59,23 +61,22 @@ public class User {
     public int doLogin(){
         String sql = "SELECT * FROM socialstorydb.`user` WHERE phonenum = \"" + this.user_Phone +"\" AND PASSWORD = \""+ this.user_Password + "\"";
         DButils db = new DButils();
-        int responseCode=1;
+        int responseCode=0;
         try {
             responseCode = db.query(sql);
+            System.out.println("我是登陆返回值"+ responseCode);
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return responseCode;
     }
 
-    public String doGetInfo(){
+    public Map doGetInfo(){
         String sql = "SELECT id,NAME,phonenum,headphoto FROM socialstorydb.`user` WHERE phonenum=\""+ this.user_Phone + "\"";
         Map<String, String> map = new HashMap<String, String>();
         DButils db = new DButils();
-        map = db.doQuery(sql);
-        System.out.println(map);
-        String result = JSON.toJSONString(map, SerializerFeature.WriteMapNullValue);
-        return result;
+        map =  db.getUserInfoQuerry(sql);
+        return map;
     }
 
     //存头像地址

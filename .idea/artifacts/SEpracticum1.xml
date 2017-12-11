@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="SEpracticum1">
+  <artifact type="war" name="SEpracticum1">
     <output-path>$PROJECT_DIR$/out/artifacts/SEpracticum1_war_exploded</output-path>
-    <root id="root">
+    <root id="archive" name="SEpracticum1.war">
       <element id="javaee-facet-resources" facet="SEpracticum1/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">

@@ -1,5 +1,7 @@
 package com.Model;
 
+import com.alibaba.fastjson.JSON;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
@@ -85,7 +87,34 @@ public class DButils {
         }
     }
 
-    public Map doQuery(String sql)  {
+    public Map getWorks(String sql) {
+        Map <String, String> map = new <String, String> HashMap();////
+        Map <String ,String >map1 = new <String ,String > HashMap();
+        try{
+            connection = this.getConnection();
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(sql);
+            for(int i = 1;resultSet.next();i++){
+                String p_id = resultSet.getString("p_id");
+                String p_title = resultSet.getString("p_title");
+                String uid = resultSet.getString("id");
+                map1.put("uid", uid);
+                map1.put("p_title", p_title);
+                map1.put("p_id", p_id);
+                String result = JSON.toJSONString(map1);
+                System.out.println(result);
+                map.put("value"+ i  ,result);
+            }
+            return map;
+        }catch (SQLException e){
+            e.printStackTrace();
+            return map;
+        }finally {
+            this.releaseResources(resultSet,statement,connection);
+        }
+    }
+
+    public Map getUserInfoQuerry(String sql)  {
         Map map = new HashMap();
         try {
             connection = this.getConnection();
@@ -108,8 +137,9 @@ public class DButils {
         }
         return map;
     }
+
     public int query(String sql) throws SQLException {
-        int st = 1;
+        int responseCode = 0;
         System.out.println(sql);
         connection = this.getConnection();
         System.out.print("链接数据库OK");
@@ -117,11 +147,11 @@ public class DButils {
             statement = connection.createStatement();
             resultSet = statement.executeQuery(sql);
             if(resultSet.next())
-                st=0;
-            return st;
+                responseCode=1;
+            return responseCode;
         } catch (SQLException e) {
             e.printStackTrace();
-            return st;
+            return responseCode;
         }finally {
             this.releaseResources(resultSet,statement,connection);
         }

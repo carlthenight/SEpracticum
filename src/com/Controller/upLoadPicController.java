@@ -23,7 +23,7 @@ public class upLoadPicController extends HttpServlet {
         Part part = request.getPart("file");
         PrintWriter pw=response.getWriter();
         User user = new User(uphone);
-        String URL = "/usr/local/test/headPic" + uphone +".jpg";
+        String URL = "/headPic/" + uphone +".jpg";
         System.out.println(URL);
         if(uphone.equals("") || part == null){
             pw.write("ERRO");

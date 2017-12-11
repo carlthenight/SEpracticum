@@ -1,6 +1,8 @@
 package com.Controller;
 
 import com.Model.User;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Map;
 
 @WebServlet(name = "getUserInfoController")
 public class getUserInfoController extends HttpServlet {
@@ -19,7 +22,8 @@ public class getUserInfoController extends HttpServlet {
             pw.write("ERRO");
         }else{
             User user = new User(uphone);
-            String result = user.doGetInfo();
+            Map map = user.doGetInfo();
+            String result = JSON.toJSONString(map, SerializerFeature.WriteMapNullValue);
             response.setContentType("text/html");
             pw.write(result);
         }

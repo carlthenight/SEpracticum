@@ -40,4 +40,12 @@
         <url-pattern>/user/ulhPhoto</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>getWorks</servlet-name>
+        <servlet-class>com.Controller.getWorks</servlet-class>
+    </servlet>
+   <servlet-mapping>
+       <servlet-name>getWorks</servlet-name>
+       <url-pattern>/user/getWorks</url-pattern>
+   </servlet-mapping>
 </web-app>
