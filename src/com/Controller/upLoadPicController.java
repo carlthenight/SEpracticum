@@ -21,6 +21,8 @@ public class upLoadPicController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uphone = request.getParameter("uphone");
         Part part = request.getPart("file");
+        response.setContentType("text/html;charset=UTF-8");
+        response.setCharacterEncoding("UTF-8");
         PrintWriter pw=response.getWriter();
         User user = new User(uphone);
         String URL = "/headPic/" + uphone +".jpg";
@@ -30,7 +32,6 @@ public class upLoadPicController extends HttpServlet {
         }else {
             try {
                 int responseCode = user.doUploadPic(URL);
-                response.setContentType("text/html");
                 if(responseCode >=1 ){
                     part.write(uphone + ".jpg");
                     pw.write("{\"reslut\":\"" + responseCode + "\"}" );

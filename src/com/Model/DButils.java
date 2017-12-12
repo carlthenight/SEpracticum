@@ -1,6 +1,7 @@
 package com.Model;
 
 import com.alibaba.fastjson.JSON;
+import com.sun.org.apache.xerces.internal.xs.datatypes.ObjectList;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,9 +10,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 
 public class DButils {
     private static String driverName;
@@ -87,28 +86,51 @@ public class DButils {
         }
     }
 
-    public Map getWorks(String sql) {
-        Map <String, String> map = new <String, String> HashMap();////
-        Map <String ,String >map1 = new <String ,String > HashMap();
+    public List getWorksDetail(String sql){
+        List<Object> list = new ArrayList<Object>();
         try{
             connection = this.getConnection();
             statement = connection.createStatement();
             resultSet = statement.executeQuery(sql);
             for(int i = 1;resultSet.next();i++){
+                Map<String,String> map = new HashMap<String,String>();
+                String g_id = resultSet.getString("g_id");
+                String picture_url = resultSet.getString("picture_url");
+                String picture_content = resultSet.getString("picture_content");
+                map.put("g_id", g_id);
+                map.put("picture_url", picture_url);
+                map.put("picture_content", picture_content);
+                list.add(map);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public List getWorksTitle(String sql) {
+        List <Object> list =new ArrayList<Object>();////
+        try{
+            connection = this.getConnection();
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(sql);
+            for(int i = 1;resultSet.next();i++){
+                Map <String ,Object >map1 = new <String ,Object > HashMap();
+                List<Object> list1 = new ArrayList<Object>();
                 String p_id = resultSet.getString("p_id");
                 String p_title = resultSet.getString("p_title");
                 String uid = resultSet.getString("id");
-                map1.put("uid", uid);
+                String sql1 = "SELECT * FROM socialstorydb.`group` WHERE p_id=\""+ p_id +"\"";
+                list1 = this.getWorksDetail(sql1);
                 map1.put("p_title", p_title);
                 map1.put("p_id", p_id);
-                String result = JSON.toJSONString(map1);
-                System.out.println(result);
-                map.put("value"+ i  ,result);
+                map1.put("story",list1);
+                list.add(map1);
             }
-            return map;
+            return list;
         }catch (SQLException e){
             e.printStackTrace();
-            return map;
+            return list;
         }finally {
             this.releaseResources(resultSet,statement,connection);
         }

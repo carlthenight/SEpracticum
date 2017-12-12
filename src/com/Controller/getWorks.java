@@ -13,24 +13,30 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @WebServlet(name = "getWorks")
 public class getWorks extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uid = request.getParameter("uid");
+        response.setContentType("text/html;charset=UTF-8");
+        response.setCharacterEncoding("UTF-8");
         PrintWriter pw = response.getWriter();
         String result = null;
         if(uid==null){
             pw.write("ERRO");
         }else{
-            Map map = new HashMap();
+            List list = new ArrayList();
             Works works = new Works(uid);
             try {
-                map = works.getWorks();
-                if(map.isEmpty()){
-                    result = "{\"null\"}";
+                list = works.getWorks();
+                Map map = new HashMap();
+                map.put("array",list);
+                if(list.isEmpty()){
+                    result = JSON.toJSONString(map, SerializerFeature.WriteMapNullValue);
                 }else{
                     result = JSON.toJSONString(map, SerializerFeature.WriteMapNullValue);
                 }

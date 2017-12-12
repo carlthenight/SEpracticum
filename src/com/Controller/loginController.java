@@ -18,9 +18,10 @@ public class loginController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uphone = request.getParameter("uphone");
         String upsw = request.getParameter("upsw");
+        response.setContentType("text/html;charset=UTF-8");
+        response.setCharacterEncoding("UTF-8");
         PrintWriter pw = response.getWriter();
         if(uphone==null || upsw ==null){
-            response.setContentType("text/html");
             pw.write("ERRO");
         }else{
             User user = new User(uphone,upsw);
@@ -28,7 +29,6 @@ public class loginController extends HttpServlet {
             Map<String, String> map = new HashMap<String, String>();
             map.put("result",String.valueOf(responseCode));
             String result = JSON.toJSONString(map);
-            response.setContentType("text/html");
             pw.write(result);
         }
         pw.flush();

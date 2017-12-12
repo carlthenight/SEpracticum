@@ -48,4 +48,13 @@
        <servlet-name>getWorks</servlet-name>
        <url-pattern>/user/getWorks</url-pattern>
    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>downloadWorks</servlet-name>
+        <servlet-class>com.Controller.downloadWorks</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>downloadWorks</servlet-name>
+        <url-pattern>/works/download</url-pattern>
+    </servlet-mapping>
 </web-app>

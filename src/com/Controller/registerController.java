@@ -16,6 +16,8 @@ import com.alibaba.fastjson.JSON;
 @WebServlet(name = "registerController")
 public class registerController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        response.setCharacterEncoding("UTF-8");
         String uphone = request.getParameter("uphone");
         String upsw = request.getParameter("upsw");
         String uname = request.getParameter("uname");
@@ -24,7 +26,6 @@ public class registerController extends HttpServlet {
         Map<String, String> map = new HashMap<String, String>();
         map.put("result",String.valueOf(responseCode));
         String result = JSON.toJSONString(map);
-        response.setContentType("text/html");
         PrintWriter pw = response.getWriter();
         pw.write(result);
         pw.flush();
