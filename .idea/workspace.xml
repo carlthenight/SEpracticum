@@ -6,19 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="043bbc3d-129f-45d9-84ab-9ef63ab568ce" name="Default" comment="更新了后台判断jpg与png">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/commons_fileupload_1_3_3.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/commons_io_2_6.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/Controller/upLoadStory.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/SEpracticum1.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/SEpracticum1.xml" />
+    <list default="true" id="043bbc3d-129f-45d9-84ab-9ef63ab568ce" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/SEpracticum1.iml" afterPath="$PROJECT_DIR$/SEpracticum1.iml" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/SEpracticum1_war_exploded/SEpracticum1.war" afterPath="$PROJECT_DIR$/out/artifacts/SEpracticum1_war_exploded/SEpracticum1.war" />
       <change beforePath="$PROJECT_DIR$/out/production/SEpracticum1/com/Controller/upLoadPicController.class" afterPath="$PROJECT_DIR$/out/production/SEpracticum1/com/Controller/upLoadPicController.class" />
-      <change beforePath="$PROJECT_DIR$/src/com/Controller/downloadWorks.java" afterPath="$PROJECT_DIR$/src/com/Controller/downloadWorks.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/Controller/upLoadPicController.java" afterPath="$PROJECT_DIR$/src/com/Controller/upLoadPicController.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/Model/Works.java" afterPath="$PROJECT_DIR$/src/com/Model/Works.java" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -469,7 +460,7 @@
       <workItem from="1513004187093" duration="224000" />
       <workItem from="1513004794400" duration="263000" />
       <workItem from="1513067476864" duration="5430000" />
-      <workItem from="1513089144563" duration="5553000" />
+      <workItem from="1513089144563" duration="5692000" />
     </task>
     <task id="LOCAL-00001" summary="将部分接口的返回值统一,成功{&quot;reslut&quot;:&quot;1&quot;},失败 {&quot;result&quot;:&quot;0&quot;}">
       <created>1513004335329</created>
@@ -499,11 +490,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513072866970</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="更新了后台判断jpg与png&#10;还没写处理上传作品">
+      <created>1513094848860</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1513094848860</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65504000" />
+    <option name="totallyTimeSpent" value="65643000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -591,7 +589,8 @@
     <MESSAGE value="将部分接口的返回值统一,成功{&quot;reslut&quot;:&quot;1&quot;},失败 {&quot;result&quot;:&quot;0&quot;}" />
     <MESSAGE value="更改返回数据格式,增加下载作品和获取作品集" />
     <MESSAGE value="更新了后台判断jpg与png" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新了后台判断jpg与png" />
+    <MESSAGE value="更新了后台判断jpg与png&#10;还没写处理上传作品" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新了后台判断jpg与png&#10;还没写处理上传作品" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
