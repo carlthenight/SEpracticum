@@ -16,6 +16,7 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 
 @WebServlet(name = "upLoadPicController")
+//@MultipartConfig(location = "D://test")
 @MultipartConfig(location = "/usr/local/test/headPic")
 public class upLoadPicController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -24,21 +25,28 @@ public class upLoadPicController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
         PrintWriter pw=response.getWriter();
-        User user = new User(uphone);
-        String URL = "/headPic/" + uphone +".jpg";
-        System.out.println(URL);
         if(uphone.equals("") || part == null){
             pw.write("ERRO");
         }else {
             try {
-                int responseCode = user.doUploadPic(URL);
-                if(responseCode >=1 ){
-                    part.write(uphone + ".jpg");
-                    pw.write("{\"reslut\":\"" + responseCode + "\"}" );
-                    System.out.print("上传成功！");
+                User user = new User(uphone);
+                String namePic = part.getSubmittedFileName();
+                String filenameEx = namePic.substring(namePic.length()-4);
+                if(filenameEx.equals(".jpg") || filenameEx.equals(".png")){
+                    System.out.println(filenameEx);
+                    String URL = "/headPic/" + uphone + filenameEx;
+                    System.out.println(URL);
+                    int responseCode = user.doUploadPic(URL);
+                    if(responseCode >=1 ){
+                        part.write(uphone + filenameEx);
+                        pw.write("{\"result\":\"" + responseCode + "\"}" );
+                        System.out.print("上传成功！");
+                    }else{
+                        pw.write("{\"result\":\"" + responseCode + "\"}" );
+                        System.out.print("上传失败！");
+                    }
                 }else{
-                    pw.write("{\"reslut\":\"" + responseCode + "\"}" );
-                    System.out.print("上传失败！");
+                    pw.write("ERRO");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();

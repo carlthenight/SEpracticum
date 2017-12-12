@@ -1,5 +1,13 @@
 package com.Model;
 
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,5 +46,10 @@ public class Works {
         list = db.getWorksTitle(sql);
         System.out.println("我是getWorks"+ list);
         return list;
+    }
+
+    public int upLoad(HttpServletRequest request, HttpServletResponse response){
+
+        return 1;
     }
 }

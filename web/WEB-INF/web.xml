@@ -57,4 +57,13 @@
         <servlet-name>downloadWorks</servlet-name>
         <url-pattern>/works/download</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>upLoadStory</servlet-name>
+        <servlet-class>com.Controller.upLoadStory</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>upLoadStory</servlet-name>
+        <url-pattern>/works/ulStroy</url-pattern>
+    </servlet-mapping>
 </web-app>

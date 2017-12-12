@@ -34,7 +34,8 @@ public class downloadWorks extends HttpServlet {
             String result = JSON.toJSONString(list, SerializerFeature.WriteMapNullValue);
             pw.write(result);
         }
-
+        pw.flush();
+        pw.close();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
