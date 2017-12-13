@@ -4,6 +4,7 @@ import com.Model.DButils;
 import com.Model.Works;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import sun.security.pkcs11.Secmod;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,38 +19,33 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@WebServlet(name = "getWorks")
-public class getWorks extends HttpServlet {
+@WebServlet(name = "searchWorks")
+public class searchWorks extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String uid = request.getParameter("uid");
+        String p_title = request.getParameter("title");
         response.setContentType("text/html;charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
         PrintWriter pw = response.getWriter();
-        String result = null;
-        if(uid==null){
+        if(p_title == null){
             pw.write("ERRO");
         }else{
-            List list ;
-            Works works = new Works(uid);
+            List list = new ArrayList();
+            String result = null;
+            Works works = new Works();
+            works.setW_Title(p_title);
             try {
-                list = works.getWorks();
-                list = works.getDetails(list);
+                list = works.searchWorks();
                 Map map = new HashMap();
                 map.put("array",list);
-                System.out.println(list);
-                if(list.isEmpty()){
-                    result = JSON.toJSONString(map, SerializerFeature.DisableCircularReferenceDetect);
-                }else{
-                    result = JSON.toJSONString(map,SerializerFeature.DisableCircularReferenceDetect);
-                }
-                System.out.println(result);
-                pw.write(result);
+                result = JSON.toJSONString(map, SerializerFeature.DisableCircularReferenceDetect);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+            pw.write(list.toString());
         }
         pw.flush();
         pw.close();
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

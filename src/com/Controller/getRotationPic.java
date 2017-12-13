@@ -1,11 +1,8 @@
 package com.Controller;
 
 import com.Model.DButils;
-import com.Model.User;
-import com.Model.Works;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import sun.security.pkcs11.Secmod;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,27 +11,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@WebServlet(name = "downloadWorks")
-public class downloadWorks extends HttpServlet {
+@WebServlet(name = "getRotationPic")
+public class getRotationPic extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String p_id = request.getParameter("p_id");
         response.setContentType("text/html;charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
         PrintWriter pw = response.getWriter();
-        if(p_id == null ){
-            pw.write("ERRO");
-        }else{
-            Works works = new Works();
-            works.setW_id(p_id);
-            Map map = works.downloadWorks();
-            String result = JSON.toJSONString(map, SerializerFeature.WriteMapNullValue);
-            pw.write(result);
-        }
+        String sql = "SELECT * FROM socialstorydb.`rotationpic`";
+        Map map = new HashMap();
+        DButils db = new DButils();
+        List list=  db.getRotationPic(sql);
+        map.put("story",list);
+        String result = JSON.toJSONString(map, SerializerFeature.WriteMapNullValue);
+        pw.write(result);
         pw.flush();
         pw.close();
     }

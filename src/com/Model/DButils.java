@@ -1,6 +1,7 @@
 package com.Model;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.sun.org.apache.xerces.internal.xs.datatypes.ObjectList;
 
 import java.io.IOException;
@@ -92,7 +93,7 @@ public class DButils {
             connection = this.getConnection();
             statement = connection.createStatement();
             resultSet = statement.executeQuery(sql);
-            for(int i = 1;resultSet.next();i++){
+            while (resultSet.next()){
                 Map<String,String> map = new HashMap<String,String>();
                 String g_id = resultSet.getString("g_id");
                 String picture_url = resultSet.getString("picture_url");
@@ -104,35 +105,31 @@ public class DButils {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            this.releaseResources(resultSet,statement,connection);
         }
         return list;
     }
 
-    public List getWorksTitle(String sql) {
+    public List getWorksPid(String sql) {
         List <Object> list =new ArrayList<Object>();////
         try{
             connection = this.getConnection();
             statement = connection.createStatement();
             resultSet = statement.executeQuery(sql);
-            for(int i = 1;resultSet.next();i++){
-                Map <String ,Object >map1 = new <String ,Object > HashMap();
-                List<Object> list1 = new ArrayList<Object>();
+            while(resultSet.next()){
+                Map <String ,String >map1 = new <String ,String > HashMap();
                 String p_id = resultSet.getString("p_id");
+                System.out.println("我是获取PID里面的"+ p_id);
                 String p_title = resultSet.getString("p_title");
-                String uid = resultSet.getString("id");
-                String sql1 = "SELECT * FROM socialstorydb.`group` WHERE p_id=\""+ p_id +"\"";
-                list1 = this.getWorksDetail(sql1);
-                map1.put("p_title", p_title);
                 map1.put("p_id", p_id);
-                map1.put("story",list1);
+                map1.put("p_title", p_title);
                 list.add(map1);
             }
             return list;
         }catch (SQLException e){
             e.printStackTrace();
             return list;
-        }finally {
-            this.releaseResources(resultSet,statement,connection);
         }
     }
 
@@ -159,7 +156,7 @@ public class DButils {
         }
         return map;
     }
-
+    //查询
     public int query(String sql) throws SQLException {
         int responseCode = 0;
         System.out.println(sql);
@@ -199,4 +196,105 @@ public class DButils {
             return -1;
         }
     }
+
+    public List TitleToSearch(String sql) throws SQLException {
+        List list = new ArrayList();
+        connection = this.getConnection();
+        connection = this.getConnection();
+        System.out.print("链接数据库OK");
+        try {
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                Map<String,String> map = new HashMap<String,String>();
+                String p_id = resultSet.getString("p_id");
+                String uid = resultSet.getString("id");
+                String p_title = resultSet.getString("p_title");
+                map.put("p_id", p_id);
+                map.put("p_title", p_title);
+                map.put("uid", uid);
+                String result = JSON.toJSONString(map, SerializerFeature.WriteMapNullValue);
+                list.add(result);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            this.releaseResources(resultSet,statement,connection);
+        }
+        return list ;
+    }
+
+    public List getRotationPic(String sql){
+        List list = new ArrayList();
+        try{
+            connection = this.getConnection();
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(sql);
+            while (resultSet.next()){
+                Map<String, String> map1 = new HashMap<String, String>();
+                String rpid = resultSet.getString("rp_id");
+                String rpurl = resultSet.getString("rp_url");
+                String rptitle = resultSet.getString("rp_title");
+                String rpcontent = resultSet.getString("rp_content");
+                map1.put("rp_id", rpid);
+                map1.put("rp_url", rpurl);
+                map1.put("rp_title", rptitle);
+                map1.put("rp_content", rpcontent);
+                list.add(map1);
+            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            this.releaseResources(resultSet,statement,connection);
+        }
+        return list;
+
+    }
+
+    public Map getWorksInfo1(String sql) {
+        Map <String ,String >map1 = new <String ,String > HashMap();
+        try{
+            connection = this.getConnection();
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(sql);
+            while(resultSet.next()){
+                String p_id = resultSet.getString("p_id");
+                String uid = resultSet.getString("id");
+                String p_title = resultSet.getString("p_title");
+                map1.put("uid",uid);
+                map1.put("p_id", p_id);
+                map1.put("p_title", p_title);
+            }
+            return map1;
+        }catch (SQLException e){
+            e.printStackTrace();
+            return map1;
+        }
+    }
+
+    public List getWorksInfo2(String sql) {
+        List list = new ArrayList();
+        try{
+            connection = this.getConnection();
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(sql);
+            while(resultSet.next()){
+                Map <String ,String >map1 = new <String ,String > HashMap();
+                String p_id = resultSet.getString("p_id");
+                String uid = resultSet.getString("id");
+                String p_title = resultSet.getString("p_title");
+                map1.put("uid",uid);
+                map1.put("p_id", p_id);
+                map1.put("p_title", p_title);
+                list.add(map1);
+            }
+            return list;
+        }catch (SQLException e){
+            e.printStackTrace();
+            return list;
+        }
+    }
 }
+
+
+

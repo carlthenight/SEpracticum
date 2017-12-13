@@ -64,6 +64,33 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>upLoadStory</servlet-name>
-        <url-pattern>/works/ulStroy</url-pattern>
+        <url-pattern>/works/ulStory</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>searchWorks</servlet-name>
+        <servlet-class>com.Controller.searchWorks</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>searchWorks</servlet-name>
+        <url-pattern>/works/searchWorks</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>getRotationPic</servlet-name>
+        <servlet-class>com.Controller.getRotationPic</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getRotationPic</servlet-name>
+        <url-pattern>/getRotationPic</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>recommendedStory</servlet-name>
+        <servlet-class>com.Controller.recommendedStory</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>recommendedStory</servlet-name>
+        <url-pattern>/recommendStory</url-pattern>
     </servlet-mapping>
 </web-app>

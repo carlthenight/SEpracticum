@@ -1,8 +1,7 @@
 package com.Controller;
 
-import com.Model.DButils;
 import com.Model.User;
-import com.sun.jndi.toolkit.url.UrlUtil;
+import com.alibaba.fastjson.JSON;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -14,6 +13,8 @@ import javax.servlet.http.Part;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 
 @WebServlet(name = "upLoadPicController")
 //@MultipartConfig(location = "D://test")
@@ -32,18 +33,18 @@ public class upLoadPicController extends HttpServlet {
                 User user = new User(uphone);
                 String namePic = part.getSubmittedFileName();
                 String filenameEx = namePic.substring(namePic.length()-4);
+                Map map  = new HashMap();
                 if(filenameEx.equals(".jpg") || filenameEx.equals(".png")){
                     System.out.println(filenameEx);
                     String URL = "/headPic/" + uphone + filenameEx;
                     System.out.println(URL);
                     int responseCode = user.doUploadPic(URL);
-                    if(responseCode >=1 ){
+                    String result ;
+                    if(responseCode >=1 ) {
                         part.write(uphone + filenameEx);
-                        pw.write("{\"result\":\"" + responseCode + "\"}" );
-                        System.out.print("上传成功！");
-                    }else{
-                        pw.write("{\"result\":\"" + responseCode + "\"}" );
-                        System.out.print("上传失败！");
+                        map.put("result", responseCode);
+                        result = JSON.toJSONString(map);
+                        pw.write(result);
                     }
                 }else{
                     pw.write("ERRO");
