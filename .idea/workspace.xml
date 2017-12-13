@@ -7,23 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="043bbc3d-129f-45d9-84ab-9ef63ab568ce" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/Controller/getRotationPic.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/Controller/recommendedStory.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/Controller/searchWorks.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/SEpracticum1_war_exploded/SEpracticum1.war" afterPath="$PROJECT_DIR$/out/artifacts/SEpracticum1_war_exploded/SEpracticum1.war" />
       <change beforePath="$PROJECT_DIR$/out/production/SEpracticum1/com/Controller/upLoadPicController.class" afterPath="$PROJECT_DIR$/out/production/SEpracticum1/com/Controller/upLoadPicController.class" />
       <change beforePath="$PROJECT_DIR$/out/production/SEpracticum1/com/Model/DButils.class" afterPath="$PROJECT_DIR$/out/production/SEpracticum1/com/Model/DButils.class" />
       <change beforePath="$PROJECT_DIR$/out/production/SEpracticum1/jdbc.properties" afterPath="$PROJECT_DIR$/out/production/SEpracticum1/jdbc.properties" />
-      <change beforePath="$PROJECT_DIR$/src/com/Controller/downloadWorks.java" afterPath="$PROJECT_DIR$/src/com/Controller/downloadWorks.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/Controller/getWorks.java" afterPath="$PROJECT_DIR$/src/com/Controller/getWorks.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/Controller/upLoadPicController.java" afterPath="$PROJECT_DIR$/src/com/Controller/upLoadPicController.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/Controller/upLoadStory.java" afterPath="$PROJECT_DIR$/src/com/Controller/upLoadStory.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/Model/DButils.java" afterPath="$PROJECT_DIR$/src/com/Model/DButils.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/Model/Works.java" afterPath="$PROJECT_DIR$/src/com/Model/Works.java" />
-      <change beforePath="$PROJECT_DIR$/src/jdbc.properties" afterPath="$PROJECT_DIR$/src/jdbc.properties" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -453,7 +441,7 @@
       <workItem from="1513067476864" duration="5430000" />
       <workItem from="1513089144563" duration="5782000" />
       <workItem from="1513139822181" duration="29368000" />
-      <workItem from="1513182646018" duration="2998000" />
+      <workItem from="1513182646018" duration="3032000" />
     </task>
     <task id="LOCAL-00001" summary="将部分接口的返回值统一,成功{&quot;reslut&quot;:&quot;1&quot;},失败 {&quot;result&quot;:&quot;0&quot;}">
       <created>1513004335329</created>
@@ -497,11 +485,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513094855136</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="基本完工....有待寻找BUG">
+      <created>1513185693690</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1513185693691</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98099000" />
+    <option name="totallyTimeSpent" value="98133000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -591,7 +586,8 @@
     <MESSAGE value="更改返回数据格式,增加下载作品和获取作品集" />
     <MESSAGE value="更新了后台判断jpg与png" />
     <MESSAGE value="更新了后台判断jpg与png&#10;还没写处理上传作品" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新了后台判断jpg与png&#10;还没写处理上传作品" />
+    <MESSAGE value="基本完工....有待寻找BUG" />
+    <option name="LAST_COMMIT_MESSAGE" value="基本完工....有待寻找BUG" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -843,6 +839,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="37" lean-forward="false" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
