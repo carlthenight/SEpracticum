@@ -1,10 +1,8 @@
 package com.Controller;
 
-import com.Model.DButils;
 import com.Model.Works;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import sun.security.pkcs11.Secmod;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -41,7 +39,7 @@ public class searchWorks extends HttpServlet {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            pw.write(list.toString());
+            pw.write(result);
         }
         pw.flush();
         pw.close();

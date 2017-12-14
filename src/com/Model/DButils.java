@@ -2,7 +2,6 @@ package com.Model;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.sun.org.apache.xerces.internal.xs.datatypes.ObjectList;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -213,8 +212,8 @@ public class DButils {
                 map.put("p_id", p_id);
                 map.put("p_title", p_title);
                 map.put("uid", uid);
-                String result = JSON.toJSONString(map, SerializerFeature.WriteMapNullValue);
-                list.add(result);
+                //String result = JSON.toJSONString(map, SerializerFeature.WriteMapNullValue);
+                list.add(map);
             }
         } catch (SQLException e) {
             e.printStackTrace();

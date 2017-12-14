@@ -6,12 +6,13 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="043bbc3d-129f-45d9-84ab-9ef63ab568ce" name="Default" comment="">
+    <list default="true" id="043bbc3d-129f-45d9-84ab-9ef63ab568ce" name="Default" comment="模糊标题搜索 与 整理代码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/SEpracticum1_war_exploded/SEpracticum1.war" afterPath="$PROJECT_DIR$/out/artifacts/SEpracticum1_war_exploded/SEpracticum1.war" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEpracticum1/com/Controller/upLoadPicController.class" afterPath="$PROJECT_DIR$/out/production/SEpracticum1/com/Controller/upLoadPicController.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SEpracticum1_war_exploded/SEpracticum1.war" afterPath="" />
       <change beforePath="$PROJECT_DIR$/out/production/SEpracticum1/com/Model/DButils.class" afterPath="$PROJECT_DIR$/out/production/SEpracticum1/com/Model/DButils.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEpracticum1/jdbc.properties" afterPath="$PROJECT_DIR$/out/production/SEpracticum1/jdbc.properties" />
+      <change beforePath="$PROJECT_DIR$/src/com/Controller/searchWorks.java" afterPath="$PROJECT_DIR$/src/com/Controller/searchWorks.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/Model/DButils.java" afterPath="$PROJECT_DIR$/src/com/Model/DButils.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/Model/Works.java" afterPath="$PROJECT_DIR$/src/com/Model/Works.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,28 +27,8 @@
       <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
+            <state relative-caret-position="376">
               <caret line="94" column="22" lean-forward="false" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getRotationPic.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/Controller/getRotationPic.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="26" column="32" lean-forward="false" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="recommendedStory.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/Controller/recommendedStory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="18" column="36" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -56,9 +37,10 @@
       <file leaf-file-name="DButils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/Model/DButils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="293" column="23" lean-forward="false" selection-start-line="293" selection-start-column="23" selection-end-line="293" selection-end-column="23" />
+            <state relative-caret-position="321">
+              <caret line="215" column="28" lean-forward="false" selection-start-line="215" selection-start-column="28" selection-end-line="215" selection-end-column="28" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="initializer##0;class#DButils#0" expanded="false" />
                 <element signature="method#getConnection#0;class#DButils#0" expanded="false" />
                 <element signature="method#releaseResources#0;class#DButils#0" expanded="false" />
@@ -67,9 +49,35 @@
                 <element signature="method#getUserInfoQuerry#0;class#DButils#0" expanded="false" />
                 <element signature="method#query#0;class#DButils#0" expanded="false" />
                 <element signature="method#update#0;class#DButils#0" expanded="false" />
-                <element signature="method#TitleToSearch#0;class#DButils#0" expanded="false" />
                 <element signature="method#getRotationPic#0;class#DButils#0" expanded="false" />
                 <element signature="method#getWorksInfo1#0;class#DButils#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="searchWorks.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/Controller/searchWorks.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="646">
+              <caret line="34" column="37" lean-forward="false" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Works.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/Model/Works.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#getWorks#0;class#Works#0" expanded="false" />
+                <element signature="method#getDetails#0;class#Works#0" expanded="false" />
+                <element signature="method#upLoad#0;class#Works#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -111,14 +119,14 @@
         <option value="$PROJECT_DIR$/src/jdbc.properties" />
         <option value="$PROJECT_DIR$/src/com/Controller/upLoadStory.java" />
         <option value="$PROJECT_DIR$/src/com/Controller/getWorks.java" />
-        <option value="$PROJECT_DIR$/src/com/Controller/searchWorks.java" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/src/com/Controller/downloadWorks.java" />
         <option value="$PROJECT_DIR$/src/com/Controller/getRotationPic.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/com/Controller/searchWorks.java" />
         <option value="$PROJECT_DIR$/src/com/Model/Works.java" />
-        <option value="$PROJECT_DIR$/src/com/Model/DButils.java" />
         <option value="$PROJECT_DIR$/src/com/Controller/recommendedStory.java" />
+        <option value="$PROJECT_DIR$/src/com/Model/DButils.java" />
       </list>
     </option>
   </component>
@@ -165,6 +173,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -222,9 +233,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -334,7 +342,7 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="SEtest" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="tomcat-8.5.15" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="tomcat-8.5.15" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="SEpracticum1">
@@ -344,7 +352,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_SEpracticum1" />
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_SEpracticum1_2" />
       </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
       <predefined_log_file id="Tomcat Catalina" enabled="true" />
@@ -353,7 +361,7 @@
       <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="63437" />
+        <option name="DEBUG_PORT" value="51441" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -441,7 +449,8 @@
       <workItem from="1513067476864" duration="5430000" />
       <workItem from="1513089144563" duration="5782000" />
       <workItem from="1513139822181" duration="29368000" />
-      <workItem from="1513182646018" duration="3032000" />
+      <workItem from="1513182646018" duration="3055000" />
+      <workItem from="1513225165841" duration="1732000" />
     </task>
     <task id="LOCAL-00001" summary="将部分接口的返回值统一,成功{&quot;reslut&quot;:&quot;1&quot;},失败 {&quot;result&quot;:&quot;0&quot;}">
       <created>1513004335329</created>
@@ -492,11 +501,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513185693691</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="基本完工....有待寻找BUG">
+      <created>1513185701483</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1513185701483</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98133000" />
+    <option name="totallyTimeSpent" value="99888000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -509,7 +525,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -526,8 +541,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13539445" sideWeight="0.56227756" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13539445" sideWeight="0.4377224" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13646056" sideWeight="0.55516016" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13646056" sideWeight="0.44483986" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -634,6 +649,7 @@
         <state relative-caret-position="1102">
           <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="initializer##0;class#DButils#0" expanded="false" />
             <element signature="method#getConnection#0;class#DButils#0" expanded="false" />
             <element signature="method#releaseResources#0;class#DButils#0" expanded="false" />
@@ -642,7 +658,6 @@
             <element signature="method#getUserInfoQuerry#0;class#DButils#0" expanded="false" />
             <element signature="method#query#0;class#DButils#0" expanded="false" />
             <element signature="method#update#0;class#DButils#0" expanded="false" />
-            <element signature="method#TitleToSearch#0;class#DButils#0" expanded="false" />
             <element signature="method#getRotationPic#0;class#DButils#0" expanded="false" />
             <element signature="method#getWorksInfo1#0;class#DButils#0" expanded="false" />
           </folding>
@@ -839,7 +854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="37" lean-forward="false" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -875,14 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Controller/searchWorks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="38" column="38" lean-forward="false" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Controller/getWorks.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -899,34 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="94" column="22" lean-forward="false" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Controller/getRotationPic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="26" column="32" lean-forward="false" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Model/Works.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="72" column="30" lean-forward="false" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
-          <folding>
-            <element signature="method#getWorks#0;class#Works#0" expanded="false" />
-            <element signature="method#getDetails#0;class#Works#0" expanded="false" />
-            <element signature="method#upLoad#0;class#Works#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Controller/downloadWorks.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -935,11 +913,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Controller/getRotationPic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="26" column="32" lean-forward="false" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="94" column="22" lean-forward="false" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Controller/recommendedStory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="28" column="28" lean-forward="false" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Model/DButils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="293" column="23" lean-forward="false" selection-start-line="293" selection-start-column="23" selection-end-line="293" selection-end-column="23" />
+        <state relative-caret-position="321">
+          <caret line="215" column="28" lean-forward="false" selection-start-line="215" selection-start-column="28" selection-end-line="215" selection-end-column="28" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="initializer##0;class#DButils#0" expanded="false" />
             <element signature="method#getConnection#0;class#DButils#0" expanded="false" />
             <element signature="method#releaseResources#0;class#DButils#0" expanded="false" />
@@ -948,18 +951,32 @@
             <element signature="method#getUserInfoQuerry#0;class#DButils#0" expanded="false" />
             <element signature="method#query#0;class#DButils#0" expanded="false" />
             <element signature="method#update#0;class#DButils#0" expanded="false" />
-            <element signature="method#TitleToSearch#0;class#DButils#0" expanded="false" />
             <element signature="method#getRotationPic#0;class#DButils#0" expanded="false" />
             <element signature="method#getWorksInfo1#0;class#DButils#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Controller/recommendedStory.java">
+    <entry file="file://$PROJECT_DIR$/src/com/Model/Works.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="18" column="36" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="36" />
-          <folding />
+        <state relative-caret-position="196">
+          <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getWorks#0;class#Works#0" expanded="false" />
+            <element signature="method#getDetails#0;class#Works#0" expanded="false" />
+            <element signature="method#upLoad#0;class#Works#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Controller/searchWorks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="34" column="37" lean-forward="false" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

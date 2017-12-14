@@ -1,15 +1,10 @@
 package com.Model;
 
 import com.alibaba.fastjson.JSON;
-import com.sun.javafx.collections.MappingChange;
-import jdk.nashorn.internal.ir.WhileNode;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
-import sun.awt.DesktopBrowse;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
@@ -54,13 +49,14 @@ public class Works {
     public Works(String userid){
         this.uid =userid;
     }
+
     public Works(){
 
     }
 
     public List searchWorks() throws SQLException {
         List list = new ArrayList();
-        String sql = "SELECT * FROM socialstorydb.`product` WHERE p_title=\""+ this.w_Title+"\"";
+        String sql = "SELECT * FROM socialstorydb.`product` WHERE p_title LIKE \"%%"+ this.w_Title+"%%\"";
         DButils db = new DButils();
         list  = db.TitleToSearch(sql);
         return list;
