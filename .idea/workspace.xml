@@ -6,13 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="043bbc3d-129f-45d9-84ab-9ef63ab568ce" name="Default" comment="模糊标题搜索 与 整理代码">
+    <list default="true" id="043bbc3d-129f-45d9-84ab-9ef63ab568ce" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/SEpracticum1_war_exploded/SEpracticum1.war" afterPath="" />
       <change beforePath="$PROJECT_DIR$/out/production/SEpracticum1/com/Model/DButils.class" afterPath="$PROJECT_DIR$/out/production/SEpracticum1/com/Model/DButils.class" />
-      <change beforePath="$PROJECT_DIR$/src/com/Controller/searchWorks.java" afterPath="$PROJECT_DIR$/src/com/Controller/searchWorks.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/Model/DButils.java" afterPath="$PROJECT_DIR$/src/com/Model/DButils.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/Model/Works.java" afterPath="$PROJECT_DIR$/src/com/Model/Works.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -450,7 +447,7 @@
       <workItem from="1513089144563" duration="5782000" />
       <workItem from="1513139822181" duration="29368000" />
       <workItem from="1513182646018" duration="3055000" />
-      <workItem from="1513225165841" duration="1732000" />
+      <workItem from="1513225165841" duration="1756000" />
     </task>
     <task id="LOCAL-00001" summary="将部分接口的返回值统一,成功{&quot;reslut&quot;:&quot;1&quot;},失败 {&quot;result&quot;:&quot;0&quot;}">
       <created>1513004335329</created>
@@ -508,11 +505,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513185701483</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="添加模糊标题搜索">
+      <created>1513226932309</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1513226932309</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99888000" />
+    <option name="totallyTimeSpent" value="99912000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -602,7 +606,8 @@
     <MESSAGE value="更新了后台判断jpg与png" />
     <MESSAGE value="更新了后台判断jpg与png&#10;还没写处理上传作品" />
     <MESSAGE value="基本完工....有待寻找BUG" />
-    <option name="LAST_COMMIT_MESSAGE" value="基本完工....有待寻找BUG" />
+    <MESSAGE value="添加模糊标题搜索" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加模糊标题搜索" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
