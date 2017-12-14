@@ -39,7 +39,7 @@ public class User {
 
     public int doRegister(){
         int responseCode=0;
-        String sql = "INSERT INTO socialstorydb.`user`(PASSWORD,NAME,phonenum) VALUES ("+ this.user_Password +",\""+ this.user_name+ "\","+ this.user_Phone+")";
+        String sql = "INSERT INTO socialstorydb.`user`(PASSWORD,NAME,phonenum) VALUES (\""+ this.user_Password +"\",\""+ this.user_name+ "\",\""+ this.user_Phone+"\")";
         String sql1 = "SELECT * FROM socialstorydb.`user` WHERE phonenum = \"" + this.user_Phone +"\"";
         DButils db = new DButils();
         try {
