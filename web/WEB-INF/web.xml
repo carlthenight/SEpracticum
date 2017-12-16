@@ -93,4 +93,13 @@
         <servlet-name>recommendedStory</servlet-name>
         <url-pattern>/recommendStory</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>deleteWorks</servlet-name>
+        <servlet-class>com.Controller.deleteWorks</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteWorks</servlet-name>
+        <url-pattern>/works/deleteWorks</url-pattern>
+    </servlet-mapping>
 </web-app>

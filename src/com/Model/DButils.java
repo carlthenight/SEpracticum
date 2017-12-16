@@ -184,15 +184,16 @@ public class DButils {
             try {
                 statement = connection.createStatement();
                 int flag = statement.executeUpdate(sql);
+                System.out.println("我是flag哟"+ flag);
                 return flag;
             } catch (Exception e) {
                 e.printStackTrace();
-                return -1;
+                return 0;
             }finally {
                 this.releaseResources(resultSet,statement,connection);
             }
-        } else {
-            return -1;
+        }else {
+            return 0;
         }
     }
 

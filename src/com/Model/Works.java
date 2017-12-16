@@ -54,6 +54,14 @@ public class Works {
 
     }
 
+    public int deleteWorks() throws SQLException {
+        int responseCode ;
+        String sql = "DELETE  FROM socialstorydb.`product` WHERE p_id=\""+ this.w_id+ "\"";
+        DButils db = new DButils();
+        responseCode = db.update(sql);
+        return responseCode;
+    }
+
     public List searchWorks() throws SQLException {
         List list = new ArrayList();
         String sql = "SELECT * FROM socialstorydb.`product` WHERE p_title LIKE \"%%"+ this.w_Title+"%%\"";
