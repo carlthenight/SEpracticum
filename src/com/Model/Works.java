@@ -77,7 +77,11 @@ public class Works {
         map = db.getWorksInfo1(sql1);
         String sql = "SELECT * FROM socialstorydb.`group` WHERE p_id=\""+ this.w_id +"\"";
         list = db.getWorksDetail(sql);
-        map.put("story",list);
+        if(list.isEmpty()){
+            map.put("",list);
+        }else {
+            map.put("story",list);
+        }
         return map;
     }
 

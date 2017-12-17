@@ -11,17 +11,11 @@
     <title>TestFileUpLoad</title>
   </head>
   <body>
-  <form action="/SEpracticum1/works/ulStory" method="post" enctype="multipart/form-data">
-    用户:<input type="text" name = "uid" ><br>
-    故事标题:<input type="text" name = "title"><br>
-    故事顺序:<input type="text" name = "g_id"><br>
-      故事描述:<input type="text" name = "g_content" ><br>
-    故事图片<input type="file" name="file"><br>
-    故事顺序:<input type="text" name = "g_id"><br>
-      故事描述:<input type="text" name = "g_content" ><br>
-    故事图片:<input type="file" name="file"><br>
-
-    <input type="submit" value="submit">
-  </form>
+  <div align="center">
+      <h1>这是一个课设的接口</h1><br>
+      <li>详情：<a href="https://github.com/carlthenight/SEpracticum">carlthenight Github</a ></li>
+      <li>Email:carllee399@hotmail.com</li>
+      <li>QQ:719095750</li>
+  </div>
   </body>
 </html>

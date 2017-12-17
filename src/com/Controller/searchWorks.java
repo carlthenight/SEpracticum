@@ -34,7 +34,7 @@ public class searchWorks extends HttpServlet {
             try {
                 list = works.searchWorks();
                 Map map = new HashMap();
-                map.put("array",list);
+                map.put("story",list);
                 result = JSON.toJSONString(map, SerializerFeature.DisableCircularReferenceDetect);
             } catch (SQLException e) {
                 e.printStackTrace();

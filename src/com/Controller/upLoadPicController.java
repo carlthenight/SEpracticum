@@ -42,7 +42,7 @@ public class upLoadPicController extends HttpServlet {
                     String result ;
                     if(responseCode >=1 ) {
                         part.write(uphone + filenameEx);
-                        map.put("result", responseCode);
+                        map.put("result", String.valueOf(responseCode));
                         result = JSON.toJSONString(map);
                         pw.write(result);
                     }
