@@ -135,6 +135,8 @@ public class Works {
         ServletFileUpload sfu = new ServletFileUpload(factory);
         //设置编码
         sfu.setHeaderEncoding("UTF-8");
+        List <String> gIdList = new ArrayList<String>();
+        List <String> gContentList =  new ArrayList<String>();
         try{
             //散列做w_id
             Date date = new Date();
@@ -158,18 +160,22 @@ public class Works {
             } catch (NoSuchAlgorithmException e) {
                 e.printStackTrace();
             }
+            //服务器测试
+            String savePath = "/usr/local/test/story/" + this.w_id ;
+            //本地测试
+            //String savePath = "D://test/story" + this.w_id ;
+            File saveDir = new File(savePath);
+            if(!saveDir.exists()){
+                saveDir.mkdir();
+                System.out.println("创建文件夹成功"+ savePath);
+            }
             // 处理表单请求
             List<FileItem> itemList = sfu.parseRequest(request);
             int responseCode = 0;
+            int flagOfPic=0;
+            int doCount = 0;
             for (FileItem fileItem : itemList) {
                 // 对应表单中的控件的name
-                Long size = fileItem.getSize();
-                if(size==0){return "{\"result\":\"0\"}";}
-                String savePath = "/usr/local/test/story/" + this.w_id;
-                File saveDir = new File(savePath);
-                if(!saveDir.exists()){
-                    saveDir.mkdir();
-                }
                 String fieldName = fileItem.getFieldName();
                 System.out.println("控件名称：" + fieldName);
                 // 如果是普通表单控件
@@ -183,16 +189,15 @@ public class Works {
                             break;
                         case "title":this.setW_Title(value);
                             break;
-                        case"g_id":this.setG_id(value);
+                        case"g_id":gIdList.add(value);
+                                        flagOfPic++;
                             break;
-                        case "g_content":this .setG_content(value);
+                        case "g_content":gContentList.add(value);
                             break;
                         default:
                             break;
                     }
-                    if(fieldName.equals("g_id" ) || fieldName.equals("file")){
-
-                    }else if(fieldName.equals("title")){
+                    if(fieldName.equals("title")){
                         //传输至 作品 数据库
                         DButils db = new DButils();
                         String sql = "INSERT INTO socialstorydb.`product`(p_id,p_title,id) VALUES (\""+ this.w_id +"\",\""+ this.w_Title+ "\",\""+ this.uid+"\")";
@@ -205,19 +210,26 @@ public class Works {
                     // 获得文件名
                     String fileName = fileItem.getName();
                     String fileEx = fileName.substring(fileName.length()-4);
-                    String lastfileName  = this.g_id + fileEx ;
-                    System.out.println("修改后的文件名："+lastfileName );
-                    //将文件信息保存到数据库
-                    DButils db = new DButils();
-                    String storyPicPath = "/storyPic/"+ this.w_id;
-                    String sql = "INSERT INTO socialstorydb.`group` (g_id,picture_url,picture_content,p_id) VALUE (\""+ this.g_id +"\",\""+ storyPicPath + "/"+ lastfileName+"\",\""+ this.g_content+"\",\""+ this.w_id+ "\")";
-                    System.out.println(sql);
-                    responseCode = db.update(sql);
-                    System.out.println("这是储存works的作品顺序还有作品你内容及地址哟 "+ responseCode);
-                    //将文件保存到指定的路径
-                    File file = new File(savePath,lastfileName);
-                    fileItem.write(file);
-                    System.out.println("msg : 上传成功！");
+                    String lastFileName = "";
+                    String gContent = "";
+                    if(doCount<flagOfPic){
+                        lastFileName  = gIdList.get(doCount) + fileEx ;
+                        gContent = gContentList.get(doCount);
+                        System.out.println("修改后的文件名："+lastFileName );
+                        //将文件信息保存到数据库
+                        DButils db = new DButils();
+                        String storyPicPath = "/storyPic/"+ this.w_id;
+                        String sql = "INSERT INTO socialstorydb.`group` (g_id,picture_url,picture_content,p_id) VALUE (\""+ gIdList.get(doCount) +"\",\""+ storyPicPath + "/"+ lastFileName+"\",\""+ gContent+"\",\""+ this.w_id+ "\")";
+                        System.out.println(sql);
+                        responseCode = db.update(sql);
+                        System.out.println("这是储存works的作品顺序还有作品你内容及地址哟 "+ responseCode);
+                        //将文件保存到指定的路径
+                        File file = new File(savePath,lastFileName);
+                        System.out.println("我是指定路径哟"+ savePath + ","+lastFileName);
+                        fileItem.write(file);
+                        System.out.println("msg : 上传成功！");
+                        doCount++;
+                    }
                 }
             }
             map.put("result",String.valueOf(responseCode));
